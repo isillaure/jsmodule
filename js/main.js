@@ -19,4 +19,11 @@ let myObject = {
 const NAME_KODER = 'nayeli'
 let name_koder = prompt ('¿Cuál es tu nombre?')
 
-console.log('multi')
+let age_koder = prompt('¿Cuál es tu edad?')
+
+let resultSuma = parseInt(age_koder) + 5
+console.log('suma: ', resultSuma)
+console.log('multi: ', age_koder * 5 )
+console.log('div: ', age_koder / 5)
+console.log('rest: ', age_koder -5)
+
