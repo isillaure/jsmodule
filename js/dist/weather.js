@@ -33,3 +33,24 @@ if (WEATHER === 'soleado'){
     console.log(`${WEATHER_DESCRIPTION}`)
 } 
 
+//Cambio a switch
+
+const WEATHER = prompt('¿Cómo está el clima?')
+
+switch(WEATHER) {
+    case 'lluvioso':
+        console.log('El día está soleado')
+    break;
+    case 'soleado':
+        console.log('El día está lluvioso')
+    break;
+    case 'nevado':
+        console.log('El día está nevado')
+    break;
+    case 'nublado':
+        console.log('El día está nublado')
+    break;
+    default:
+        const WEATHER_DESCRIPTION = prompt('Descríbeme tu día')
+        console.log(`${WEATHER_DESCRIPTION}`)
+} 
