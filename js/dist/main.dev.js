@@ -1,19 +1,19 @@
 "use strict";
 
-if (condición) {
-  // código a ejecutar si la condición es verdadera
-} else if (otraCondición) {
-  // código a ejecutar si la otraCondición es verdadera {
-} else {
-  // ejecuta este código si la condición es falsa
-}
+if (condición) {// código a ejecutar si la condición es verdadera
+} else if (otraCondición) {// código a ejecutar si la otraCondición es verdadera {
+} else {// ejecuta este código si la condición es falsa
+  }
 
-switch(expresión) {
+switch (expresión) {
   case x:
     // code block
     break;
+
   case y:
     // code block
-  default:
-    // code block
+    break;
+
+  default: // code block
+
 }
