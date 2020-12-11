@@ -15,13 +15,10 @@ for (let a = 1; a <= 100; a++) {
 
 // Dado un string revertir el orden de la palabra
 
-
-const reversaN = "ola ke ase"
-let reversa2 = ' ' // Se puede no inicializar
-for(let g = reversaN.length -1; 1 >= 0; g--) {
-    reversa2 += reversaN[g]
+const stringToReverse = "Hola mundo"
+let stringReversed = ''
+for(let a = stringToReverse.length - 1; a >= 0 ; a--) {
+    stringReversed += stringToReverse[a]
 }
-console.log(reversa2)
-
-// Imprimir los números pares entre 1 y 100 en WHILE
+console.log(stringReversed)
 
