@@ -44,8 +44,7 @@ var texto = 'Hola mundo'
 
 for (var i = 0; i <= texto.length - 1; i++) {
 
-    if (texto.charAt(i) == " " || texto.charAt(i) == "e" || texto.charAt(i) == "i" || texto.charAt(i) == "o" || texto.charAt(i) == "u"
-    ) {
+    if (texto.charAt(i) == " " || texto.charAt(i) == "e" || texto.charAt(i) == "i" || texto.charAt(i) == "o" || texto.charAt(i) == "u") {
         cont2 += 1;
     }
 }
