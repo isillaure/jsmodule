@@ -5,10 +5,10 @@ var num = 7
 
 for (var i = 1; i <= 10; i++) {
     multi = num * i;
-    console.log(num + "x" + i + "=" + multi)
+    console.log(`${num} x ${i} = ${multi}`)
 }
 
-// Imprimir en consola los múltiplos de 3 y 7  que se encuentran entre el 1 y el 100
+// Imprimir en consola los múltiplos de 3 y 7 que se encuentran entre el 1 y el 100
 // 3,6,7,9,12,14,15....
 
 var total = ''
@@ -16,7 +16,7 @@ var total = ''
 for (var i = 1; i <= 100; i++) {
 
     if (i % 3 === 0 || i % 7 === 0){
-        total = total + i
+        total = total + i // Se puede prescindir de la variable total e imprimir i.
     }    
 }    
 console.log(total.toString())
@@ -29,8 +29,8 @@ var quijote = 'En un lugar de la mancha'
 
 for (var i = 0; i <= quijote.length - 1; i++) {
 
-    if (quijote.charAt(i) == " ") {
-        cont += 1;
+    if (quijote.charAt(i) == " ") { // Se puede usar directamente i en vez de usar char.at(i) por lo que queda if (quijote[i] === ' ')
+        cont += 1; // Se puede usar cont++
     }
 }
 
@@ -42,7 +42,7 @@ console.log ('La cantidad es espacios es: ' + cont)
 var cont2 = 0
 var texto = 'Hola mundo'
 
-for (var i = 0; i <= quijote.length - 1; i++) {
+for (var i = 0; i <= texto.length - 1; i++) {
 
     if (texto.charAt(i) == " " || texto.charAt(i) == "e" || texto.charAt(i) == "i" || texto.charAt(i) == "o" || texto.charAt(i) == "u"
     ) {
