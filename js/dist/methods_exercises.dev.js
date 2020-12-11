@@ -6,18 +6,18 @@ for (var i = 10; i >= 1; i--) {
 } // Imprimir los números pares entre 1 y 100
 
 
-for (var i = 1; i <= 100; i++) {
-  if (i % 2 === 0) {
-    console.log(i);
+for (var a = 1; a <= 100; a++) {
+  if (a % 2 === 0) {
+    console.log(a);
   }
 } // Dado un string revertir el orden de la palabra
 
 
-var textoN = "ola ke ase";
-var textoReversa; // Se puede no inicializar
+var reversaN = "ola ke ase";
+var reversa2 = ' '; // Se puede no inicializar
 
-for (var _i = textoN.length - 1; 1 >= 0; _i--) {
-  textoReversa += textoN[_i];
+for (var g = reversaN.length - 1; 1 >= 0; g--) {
+  reversa2 += reversaN[g];
 }
 
-console.log(textoReversa);
+console.log(reversa2); // Imprimir los números pares entre 1 y 100 en WHILE
