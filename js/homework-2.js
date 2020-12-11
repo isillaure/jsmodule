@@ -8,12 +8,32 @@
 // -> si es mayor o igual a 50 y menor que 60 , imprimir "E"
 // -> si es menor 50 , imprimir "F"
 
+// const GRADE = parseInt(prompt('Ingrese calificación de examen (0 a 100)'))
+// if (GRADE >= 90) {
+//     console.log('La equivalencia de la calificación es A')
+// } else if (90 > GRADE && GRADE >= 80) {
+//     console.log('La equivalencia de la calificación es B')
+// } else if (80 > GRADE && GRADE >=70) {
+//     console.log('La equivalencia de la calificación es C')
+// } else if (70 > GRADE && GRADE >=60) {
+//     console.log('La equivalencia de la calificación es D')
+// } else if (60 > GRADE && GRADE >=50) {
+//     console.log('La equivalencia de la calificación es E')
+// } else {
+//     console.log('La equivalencia de la calificación es F')
+// }
+
 
 // Exercise 2
 // Pedir al usuario por prompt un numero entre 1 y 100
 // Comparar si ese numero es divisible entre 2 y 11 e imprimir en consola un mensaje indicandolo
 // sino, enviar un mensaje negandolo
-
+const DIVISIBLE = parseInt(prompt('Ingrese un número del 0 a 100.'))
+if (DIVISIBLE % 2 && DIVISIBLE % 11 === 0) {
+    console.log('El número es divisible entre 2 y 11')
+} else {
+    console.log('El número no es divisible entre 2 y 11')
+}
 
 
 
