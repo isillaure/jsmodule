@@ -47,3 +47,39 @@ temperatureConverter (32, C)
  * getFactorial(10)
  * -> 3628800
  */
+
+
+ // Pasar los ejercicios a return. 
+
+function calculateDogAge (dogYears, dogName = 'Nombre por definir') {
+    return 7 * dogYears
+}
+calculateDogAge (7, Asuka)
+
+function calcAreaCircle (circleRadius) {
+    const pi = 3.141592
+    return pi * (Math.pow(circleRadius, 2))
+}
+calcAreaCircle(6)
+
+function calcCircumCircle (circleRadius) {
+    const pi = 3.141592
+    return pi * circleRadius // Se puede prescindir de la constante de pi y poner directamente el valor de pi.
+}
+calcCircumCircle (5)
+
+function temperatureConverter (temperatureScale, degree) {
+    if (temperatureScale === 'F') {
+        return (degree - 32) * (5/9) 
+    } else {
+        return (degree * (9/5)) + 32
+    }
+}
+
+//Alternativa con operador ternario
+
+function temperatureConverter (temperatureScale, degree) {
+    temperatureScale === 'F' ?
+        (degree - 32) * (5/9) :
+        (degree * (9/5)) + 32
+}
