@@ -1,1 +1,4 @@
-console.log('ola ke ase')
+function myFunction (parametros) {
+    //sentencias
+}
+
