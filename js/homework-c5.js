@@ -33,7 +33,7 @@ calcGeometry (6)
  * -> 100º Celsius equivalen a 212º fahrenheit
  */
 function temperatureConverter (temperatureScale, degree) {
-    if (temperatureScale = F) {
+    if (temperatureScale === F') {
         console.log ('${degree} ${temperatureScale} equivalen a ${(degree - 32) * (5/9)} º Centígrados.')
     } else {
         console.log ('${degree} ${temperatureScale} equivalen a ${(degree * (9/5)) + 32 } Fahrenheit.')
