@@ -7,3 +7,6 @@ function add(a,b) {
 
 const result = add(2,5)
 // result -> 7
+
+const myArray = ["string", 2, [1, 2, 3]]
+console.log(myArray[1])
