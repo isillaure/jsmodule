@@ -56,5 +56,13 @@ const firstAndLast = arrString => {
     return arrayToFill
 }
 
-// .MAP
-[1, 2, 3].map( (currentValue) => currentValue * 2 )
+// arr.map(function(currentValue)
+// {
+//     return currentValue * 2
+// })
+
+// arr.map(currentValue => {
+//     return currentValue * 2
+// })
+
+// [1, 2, 3].map(currentValue => currentValue * 2)
