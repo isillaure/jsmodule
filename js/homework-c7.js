@@ -57,7 +57,7 @@ const nonduplicatedNumber = arrNumbers => {
         }
     })
 }
-console.log(duplicatedNumber[1,4,3,2,5])
+console.log(nonduplicatedNumber[1,4,3,2,5])
 
 // Ejercicio 5 .filter()
 // Función
@@ -66,6 +66,15 @@ console.log(duplicatedNumber[1,4,3,2,5])
 // [1,2,4,2,5,4]
 // -> [2,4]
 
+const duplicatedNumber = arrNumbers => {
+    arrNumbers.filter(currentValue,index => {
+        if (arrNumbers.indexOf(currentValue) !== index) {
+            return currentValue
+        }
+    })
+}
+console.log(duplicatedNumber[1,4,3,2,5])
+
 
 // Ejercicio 6 .filter()
 //  funcion
@@ -73,3 +82,11 @@ console.log(duplicatedNumber[1,4,3,2,5])
 // y devuelva un array con los años que son bisiesto
 // [1990, 2000, 2001, 2020]
 // -> [2000,2020]
+
+const leapYear = arrYears => {
+    return arrYears.filter(currentValue => {
+        return ((currentValue % 4 == 0) && (currentValue % 100 != 0)) || (currentValue % 400 == 0) 
+    })
+}
+
+

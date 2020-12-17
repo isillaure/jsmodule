@@ -48,15 +48,30 @@ var nonduplicatedNumber = function nonduplicatedNumber(arrNumbers) {
   });
 };
 
-console.log(duplicatedNumber[(1, 4, 3, 2, 5)]); // Ejercicio 5 .filter()
+console.log(nonduplicatedNumber[(1, 4, 3, 2, 5)]); // Ejercicio 5 .filter()
 // Función
 // dado un array de números, filtre los elementos
 // y devuelva un array con los elementos duplicados
 // [1,2,4,2,5,4]
 // -> [2,4]
-// Ejercicio 6 .filter()
+
+var duplicatedNumber = function duplicatedNumber(arrNumbers) {
+  arrNumbers.filter(currentValue, function (index) {
+    if (arrNumbers.indexOf(currentValue) !== index) {
+      return currentValue;
+    }
+  });
+};
+
+console.log(duplicatedNumber[(1, 4, 3, 2, 5)]); // Ejercicio 6 .filter()
 //  funcion
 // dado un array de años, filtre los elementos
 // y devuelva un array con los años que son bisiesto
 // [1990, 2000, 2001, 2020]
 // -> [2000,2020]
+
+var leapYear = function leapYear(arrYears) {
+  return arrYears.filter(function (currentValue) {
+    return currentValue % 4 == 0 && currentValue % 100 != 0 || currentValue % 400 == 0;
+  });
+};
