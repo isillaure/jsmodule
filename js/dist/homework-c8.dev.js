@@ -43,12 +43,18 @@ var users = [{
 
 var flattenUsers = function flattenUsers(users) {
   users.reduce(function (lastValue, currentValue) {
-    var completeName = currentValue.firstName + currentValue.lastName;
-    return lastValue[completeName] = currentValue.role, lastValue;
+    var fullName = currentValue.firstName + ' ' + currentValue.lastName;
+    return lastValue[fullName] = currentValue.role, lastValue;
   }, {});
 };
 
-console.log(flattenUsers(users)); // Ejercicio 2
+console.log(flattenUsers(users)); //
+
+var joinUsers = users.reduce(function (newObject, user) {
+  var fullName = user.firstName + ' ' + user.lastName;
+  newObject[fullName] = user.role;
+  return newObject;
+}, {}); // Ejercicio 2
 //  tomando el array users,
 //  hacer una funcion que reciba 2 parametros (arrayUsers, role)
 //  y retorne un array con los usuarios que cumplan con el role
@@ -117,7 +123,7 @@ var persons = [{
 
 var whoVote = function whoVote(persons) {
   return persons.reduce(function (lastValue, currentValue) {
-    return currentValue.voted == true ? lastValue + 1 : lastValue;
+    return currentValue.voted === true ? lastValue + 1 : lastValue;
   }, 0);
 };
 
@@ -127,3 +133,10 @@ var averageVoters = persons.reduce(function (lastValue, currentValue) {
   return lastValue + currentValue.age;
 }, 0) / averageVoters.length;
 console.log(averageVoters);
+var numbersReduce = [[1, 2, 4], [1, 2, 8], [1, 9, 3]];
+var sumOfNumbers = numbersReduce.reduce(function (lastValue, currentValue) {
+  return lastValue + currentValue.reduce(function (lastValue2, currentValue2) {
+    return lastValue2 + currentValue2;
+  }, 0);
+}, 0);
+console.log(sumOfNumbers);

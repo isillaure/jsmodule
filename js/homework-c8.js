@@ -47,14 +47,21 @@ let users = [{
 //   'Zach Klabunde': 'Instructor'
 //   }
 
-let flattenUsers = users => {
+const flattenUsers = users => {
     users.reduce((lastValue, currentValue) => {
-        let completeName = currentValue.firstName + currentValue.lastName
-        return (lastValue[completeName] = currentValue.role), lastValue
+        let fullName = currentValue.firstName + ' ' + currentValue.lastName
+        return (lastValue[fullName] = currentValue.role), lastValue
     }, {})
 }
 console.log(flattenUsers(users))
 
+//
+
+const joinUsers = users.reduce((newObject, user) => {
+    let fullName = user.firstName + ' ' + user.lastName
+    newObject[fullName] = user.role
+    return newObject
+}, {})
 
 // Ejercicio 2
 //  tomando el array users,
@@ -138,9 +145,9 @@ let persons = [{
 const whoVote = (persons) =>
     persons.reduce(
         (lastValue, currentValue) =>
-        currentValue.voted == true ? lastValue + 1 : lastValue,
+        currentValue.voted === true ? lastValue + 1 : lastValue,
         0
-    );
+    )
 console.log(whoVote(persons));
 
 //2
@@ -149,3 +156,16 @@ let averageVoters = persons.reduce((lastValue, currentValue) => {
     return lastValue + currentValue.age
 }, 0) / averageVoters.length
 console.log(averageVoters)
+
+
+let numbersReduce = [
+    [1, 2, 4],
+    [1, 2, 8],
+    [1, 9, 3]
+]
+
+
+let sumOfNumbers = numbersReduce.reduce((lastValue, currentValue) => 
+    lastValue + currentValue.reduce((lastValue2, currentValue2) => lastValue2 + currentValue2, 0),0)
+
+console.log(sumOfNumbers)
