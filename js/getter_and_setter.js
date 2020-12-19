@@ -39,8 +39,7 @@ let koder = {
     {
         name: Python,
         grade: 90
-    }
-    
+    } 
 ],
 }
 
