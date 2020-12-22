@@ -1,26 +1,30 @@
-let lista = document.createElement("ul")
-let texto = document.createTextNode('Soy una lista')
-title.appendChild(texto)
-document.getElementById('contenedor').appendChild(lista)
+let elementos = document.getElementsByClassName('párrafos')
+let secondEelement = elementos[1]
+secondElement.classList.add('active') // Este no sobreescribe las clases.
+secondEelement.setAttribute('class', 'párrafos párrafo2') //En esta sí se sobreeescriben las clases.
+let bytag = document.getElementsByTagName('section') // Devuelve los elementos por su tag.
 
-let elementoLista1 = document.createElement("li")
-let texto2 = document.createTextNode('Soy un elemento de lista')
-elementoLista1.appendChild(texto2)
-document.getElementById('lista').appendChild(elementoLista1)
+bytag[0].classList.add('section_parrafo') //Accede por posición.
 
-let elementoLista2 = document.createElement("li")
-let texto3 = document.createTextNode('Soy un elemento de lista')
-elementoLista2.appendChild(texto2)
-document.getElementById('lista').appendChild(elementoLista2)
+let querySelectorAll = document.querySelectorAll('.secciones')
 
-let vinculo1 = document.createElement("a")
-let texto4 = document.createTextNode('Soy un vínculo')
-vinculo1.appendChild(elementoLista1)
-document.getElementById('elementoLista1').appendChild(vinculo1)
+const addElements = (arrNames) => {
+    arrNames.forEach(element, index => {
+        document.getElementById(selector).innerHTML = 
 
-let vinculo2 = document.createElement("a")
-let texto5 = document.createTextNode('Soy un vínculo')
-vinculo1.appendChild(elementoLista2)
-document.getElementById('elementoLista2').appendChild(vinculo2)
+    })
+}
 
-//innerhtml
+const kodersArr = ['ale', 'oscar', 'ruben', 'brian']
+addElements(.'sinclase', 4, kodersarr)
+
+
+/**
+ * onchange() lo tiene que disparar el selector
+ * get value option selected 
+ * document.getElementById('orden').value
+ * 1 función
+ * 1 metodo
+ * usar innerHTML
+ * https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
+ */
