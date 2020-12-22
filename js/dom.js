@@ -24,3 +24,26 @@ vinculo1.appendChild(elementoLista2)
 document.getElementById('elementoLista2').appendChild(vinculo2)
 
 //innerhtml
+
+let box = document.getElementById('contenedor')
+
+box.innerHTML = `
+<ul>
+<li><a href="">item 1</a></li>
+<li><a href="">item 2</a></li>
+</ul>`
+
+// iteración del mismo ejercicio
+
+let ulElement = ''
+
+for(let i = 1; i <= 9; i++){
+    ulElement += `<li><a href="">item ${i}</a></li>`
+}
+
+console.log(ulElement)
+let box = document.getElementById('contenedor')
+box.innerHTML = ulElement
+
+const addElements = (selector, numberElements)
+addElements('.sinclase', 20)
