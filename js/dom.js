@@ -15,8 +15,26 @@ const addElements = (arrNames) => {
     })
 }
 
-const kodersArr = ['ale', 'oscar', 'ruben', 'brian']
-addElements(.'sinclase', 4, kodersarr)
+const kodersArr = ['Ale', 'ale2', 'alejandra','oscar','ruben', 'brian']
+
+// Exercise
+const addElements = (selector,numberElements, arrNames) => {
+    let listKoders = ''
+    arrNames.forEach((koder, index) => {
+        if(index < numberElements ) {
+            listKoders += `<li>Koder ${index + 1}: ${koder}</li>`
+        }
+    })
+    document.querySelector(selector).innerHTML = listKoders
+}
+
+// Exercise filter
+const filterKoders = (letter) => {
+    let filtrados = kodersArr.filter((koder)=> {
+        return koder.toLowerCase().startsWith(letter.toLowerCase())
+    })
+    addElements('#lista', filtrados.length , filtrados)   
+}
 
 
 /**
@@ -26,5 +44,22 @@ addElements(.'sinclase', 4, kodersarr)
  * 1 función
  * 1 metodo
  * usar innerHTML
- * https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
  */
+
+const filterKoderSelectAD = () => {
+    let order = document.getElementById('order_list').nodeValue
+    let orderArray = kodersArr.sort()
+    if(order === 'a'){
+        return orderArray
+    }else if (order === 'd'){
+        return orderArray.reverse()
+    }
+
+} 
+
+const filterKodersSelectAZ = (letter) => {
+    let filtrados = kodersArr.filter(koder => {
+        
+    })
+}
+
