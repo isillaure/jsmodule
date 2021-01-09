@@ -17,7 +17,7 @@ const pushed_log_in = () => {
     }
 }
 
-const log_in = () => {
+const CheckLogIn = () => {
     if (document.cookie.includes('logged=true')) {
         if (location.pathname !== "/user.html") {
             location.pathname = "/user.html"
@@ -29,7 +29,7 @@ const log_in = () => {
     }
 }
 
-window.addEventListener('load', log_in)
+window.addEventListener('load', CheckLogIn)
 
 
 // 2.
