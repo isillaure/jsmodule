@@ -2,7 +2,7 @@ const usersrc = 'https://jsonplaceholder.typicode.com/users'
 const postsrc = 'https://jsonplaceholder.typicode.com/posts'
 
 // 0 = No inicializado
-// 1 =  Cargando
+// 1 = Cargando
 // 2 = Cargado
 // 3 = Interactivo
 // 4 = Completado
