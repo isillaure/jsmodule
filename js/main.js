@@ -1,113 +1,222 @@
-// const getData = (url, funcionALlamar, selector, method = 'GET') => {
-//     const httpRequest = new XMLHttpRequest()
-//     httpRequest.addEventListener('readystatechange', () => {
-//         if(httpRequest.readyState !== 4) {
-//             return 
+// //Crear nuevo usuario
+// //Base de datos no relacional
+
+// const createUser = () => {
+//     const request = new XMLHttpRequest()
+//     request.addEventListener('readystatechange', () => {
+//         if (request.readyState !== 4) {
+//             return
 //         } else {
-//             if(httpRequest.status >= 200 && httpRequest.status <= 299){
-//                 const response  = httpRequest
-//                 const objectResponse = JSON.parse(response.responseText)
-
-//                 functionCallback(selector, objectResponse)
-
-//             } else {
-//                 console.log(`Error loading page ${httpRequest.status} ${httpRequest.statusText}`)
+//             if (request.status >= 200 && request.status <= 299) {
+//                 console.log(JSON.parse(request.responseText))
 //             }
-//         } 
-
+//         }
 //     })
-
-//     httpRequest.open("GET", url, true)
-//     httpRequest.send(null)
+//     request.open('POST', `${urlDB}users/.json`)
+//     request.send(
+//         JSON.stringify({
+//             id: 1,
+//             name: "Nayeli",
+//             lastname: "Gutiérrez",
+//             urlPhoto: ""
+//         })
+//     )
 // }
 
-// const profileXML = httpRequest.responseXML.getElementsByTagName('Profile')[0]
-// const profileText = profileXML.childNodes[0].nodeValue
+// // Create user
+// const createUser = () => {
+//     // https://koders1gpython-default-rtdb.firebaseio.com/jorge
+//     let xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState === 4 && this.status === 200) {
+//             console.log(JSON.parse(this.response))
+//         } else if (this.readyState === 4 && this.status === 404) {
+//             console.error(JSON.parse(this.response))
+//             return false
+//         }
+//     }
+//     xhttp.open('POST', 'https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/.json')
+//     xhttp.send(
+//         JSON.stringify({
+//             id: 6,
+//             name: "Nayeli",
+//             lastname: "Gutiérrez",
+//             urlPhoto: "https://loremflickr.com/320/240/person"
+//         })
+//     )
+// }
 
-let xhr = new XMLHttpRequest();
+// // Read user
+// const readUser = () => {
+//     // https://koders1gpython-default-rtdb.firebaseio.com/jorge
+//     let xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState === 4 && this.status === 200) {
+//             console.log(JSON.parse(this.response))
+//         } else if (this.readyState === 4 && this.status === 404) {
+//             console.error(JSON.parse(this.response))
+//             return false
+//         }
+//     }
+//     xhttp.open('GET', 'https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/.json')
+//     // xhttp.open('GET', 'https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/-MQnTbsClYPUsYDcBS-R.json')
+//     xhttp.send()
+// }
 
-xhr.open('GET', '/article/xmlhttprequest/hello.txt', true);
+// // Update and replace
+// const updateAndReplaceUser = (idUser) => {
+//     // https://koders1gpython-default-rtdb.firebaseio.com/jorge
+//     let xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState === 4 && this.status === 200) {
+//             console.log(JSON.parse(this.response))
+//         } else if (this.readyState === 4 && this.status === 404) {
+//             console.error(JSON.parse(this.response))
+//             return false
+//         }
+//     }
+//     xhttp.open('PUT', `https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/${idUser}.json`)
+//     xhttp.send(
+//         JSON.stringify({
+//             id: 1,
+//             name: "Jorge",
+//             lastname: "Camarillo",
+//             urlPhoto: "https://loremflickr.com/320/240/person"
+//         })
+//     )
+// }
 
-try {
-    xhr.send();
-    if (xhr.status != 200) {
-        alert(`Error ${xhr.status}: ${xhr.statusText}`);
-    } else {
-        alert(xhr.response);
-    }
-} catch (err) { // instead of onerror
-    alert("Request failed");
-}
+// // Update and modify 
+// const updateAndModifyUser = (idUser) => {
+//     // https://koders1gpython-default-rtdb.firebaseio.com/jorge
+//     let xhttp = new XMLHttpRequest()
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState === 4 && this.status === 200) {
+//             console.log(JSON.parse(this.response))
+//         } else if (this.readyState === 4 && this.status === 404) {
+//             console.error(JSON.parse(this.response))
+//             return false
+//         }
+//     }
+//     xhttp.open('PATCH', `https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/${idUser}.json`)
+//     xhttp.send(
+//         JSON.stringify({
+//             name: "Jorge Luis"
+//         })
+//     )
+// }
 
-var httpRequest;
+// // Delete 
+// const deleteUser = (idUser) => {
+//     // https://koders1gpython-default-rtdb.firebaseio.com/jorge
+//     let xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState === 4 && this.status === 200) {
+//             console.log(JSON.parse(this.response))
+//         } else if (this.readyState === 4 && this.status === 404) {
+//             console.error(JSON.parse(this.response))
+//             return false
+//         }
+//     }
+//     xhttp.open('DELETE', `https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/${idUser}.json`)
+//     xhttp.send()
+// }
 
-/*
- * This method is called when the author is selected
- * It creates XMLHttpRequest object to communicate with the 
- * servlet
- */
-function getProfile(authorSelected) {
-    var url = 'http://www.javareference.com/' +
-        'exampledemo/GetAuthorsProfile?author=' +
-        authorSelected;
+// // Function request all methods
+// const requestAjax = (url, callback, method = 'GET', data = {}) => {
+//     let xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState === 4 && this.status === 200) {
+//             callback(JSON.parse(this.response))
+//             return true
+//         } else if (this.readyState === 4 && this.status === 404) {
+//             console.error(JSON.parse(this.response))
+//             return false
+//         }
+//     }
+//     xhttp.open(method, url)
+//     if (method === 'GET' || method === 'DELETE') {
+//         xhttp.send()
+//     } else {
+//         // put, patch, post
+//         xhttp.send(JSON.stringify({data}))
+//     }
+// }
 
-    if (window.ActiveXObject) {
-        httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-    } else if (window.XMLHttpRequest) {
-        httpRequest = new XMLHttpRequest();
-    }
+// // put y post
+// const showResponse = (response) => {
+//     console.log(response)
+// }
+// requestAjax(
+//     'https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/.json',
+//     showResponse,
+//     'POST', 
+//     {
+//         lastname: "Paez",
+//         name: "Ale",
+//         urlPhoto: "https://loremflickr.com/320/240/person"
+//     }
+// )
 
-    httpRequest.open("GET", url, true);
-    httpRequest.onreadystatechange = function () {
-        processRequest();
-    };
-    httpRequest.send(null);
-}
-
-/*
- * This is the call back method                
- * If the call is completed when the readyState is 4
- * and if the HTTP is successfull when the status is 200
- * update the profileSection DIV
- */
-function processRequest() {
-    if (httpRequest.readyState == 4) {
-        if (httpRequest.status == 200) {
-            //get the XML send by the servlet
-            var profileXML = httpRequest.responseXML.getElementsByTagName("Profile")[0];
-
-            //Update the HTML
-            updateHTML(profileXML);
-        } else {
-            alert("Error loading page\n" +
-                httpRequest.status + ":" +
-                httpRequest.statusText);
+// function request all methods
+const requestAjax = (url, callback, method = 'GET', data = {}) => {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            callback(JSON.parse(this.response))
+            return true
+        } else if (this.readyState === 4 && this.status === 404) {
+            console.error(JSON.parse(this.response))
+            return false
         }
     }
+    xhttp.open(method, url)
+    if (method === 'GET' || method === 'DELETE') {
+        xhttp.send()
+    } else {
+        // put, patch, post
+        xhttp.send(JSON.stringify({data}))
+    }
 }
 
-/*
- * This function parses the XML and updates the 
- * HTML DOM by creating a new text node is not present
- * or replacing the existing text node.
- */
-function updateHTML(profileXML) {
-    //The node valuse will give actual data
-    var profileText = profileXML.childNodes[0].nodeValue;
-
-    //Create the Text Node with the data received
-    var profileBody = document.createTextNode(profileText);
-
-    //Get the reference of the DIV in the HTML DOM by passing the ID
-    var profileSection = document.getElementById("profileSection");
-
-    //Check if the TextNode already exist
-    if (profileSection.childNodes[0]) {
-        //If yes then replace the existing node with the new one
-        profileSection.replaceChild(profileBody,
-            profileSection.childNodes[0]);
-    } else {
-        //If not then append the new Text node
-        profileSection.appendChild(profileBody);
+// put y post
+const showUsers = (response) => {
+    let users = response
+    let usersList = ''
+    for(user in response ) {
+        let dataUsuario = response[user]
+        usersList += `
+            <li>${dataUsuario.name} ${dataUsuario.lastname} <a href="user.html?id=${user}">Ver usuario</a></li>
+        `
     }
+    document.querySelector('.list__users').innerHTML = usersList
+}
+
+
+if(window.location.pathname === '/' || window.location.pathname === '/index.html'){
+    // estoy en home
+    requestAjax(
+    'https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/.json',
+    showUsers,
+    'GET')
+
+}
+
+const printUser = (arrData) => {  
+    console.log(arrData)
+    document.querySelector('#card__user').innerHTML = `
+    <img src="${arrData.urlPhoto}">
+    <h5 class="card-title name__user">${arrData.name}</h5>
+    <p class="card-text email__user">${arrData.lastname}</p>
+    `
+}
+
+if(window.location.pathname === '/user.html'){
+    let url = new URLSearchParams(location.search)
+    let id = url.get('id')
+    // estoy en home
+    requestAjax(
+    `https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/${id}.json`,
+    printUser,
+    'GET')
 }
