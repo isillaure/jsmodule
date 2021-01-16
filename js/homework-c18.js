@@ -17,7 +17,7 @@ $('#busqueda').keyup(function){
             $(item).show()
         }
     }
-    $('#ciudades li').each(id, elem) => {
+    $("#ciudades li").each(id, elem) => {
         if (elem.innerText.toLowerCase().search(term.toLowerCase()) !== -1)
         $("#ciudades li").eq(id).show()
     }
