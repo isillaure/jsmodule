@@ -1,222 +1,106 @@
-// //Crear nuevo usuario
-// //Base de datos no relacional
+// $(function(){
+//     console.log('Document ready')
+//     $('body h1').after(`<div></div>`)
+//     $('body').find(`div`).addClass('list')
 
-// const createUser = () => {
-//     const request = new XMLHttpRequest()
-//     request.addEventListener('readystatechange', () => {
-//         if (request.readyState !== 4) {
-//             return
-//         } else {
-//             if (request.status >= 200 && request.status <= 299) {
-//                 console.log(JSON.parse(request.responseText))
-//             }
-//         }
-//     })
-//     request.open('POST', `${urlDB}users/.json`)
-//     request.send(
-//         JSON.stringify({
-//             id: 1,
-//             name: "Nayeli",
-//             lastname: "Gutiérrez",
-//             urlPhoto: ""
-//         })
-//     )
-// }
+//     $('body').after(`
+//     <ol>
+//     <li> Item 1</div>
+//     <li> Item 2</div>
+//     <li> Item 3</div>
+//     <li> Item 4</div>
+//     <li> Item 5</div>
+//     </ol>`)
+// })
 
-// // Create user
-// const createUser = () => {
-//     // https://koders1gpython-default-rtdb.firebaseio.com/jorge
-//     let xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState === 4 && this.status === 200) {
-//             console.log(JSON.parse(this.response))
-//         } else if (this.readyState === 4 && this.status === 404) {
-//             console.error(JSON.parse(this.response))
-//             return false
-//         }
-//     }
-//     xhttp.open('POST', 'https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/.json')
-//     xhttp.send(
-//         JSON.stringify({
-//             id: 6,
-//             name: "Nayeli",
-//             lastname: "Gutiérrez",
-//             urlPhoto: "https://loremflickr.com/320/240/person"
-//         })
-//     )
-// }
+//Selectores
+//$(selector).action
+// $('.list_item').click()
+// $('list_item').mouseenter()
+// $('list_item').focus()
+// $('list_item').css()
+// $('list_item').attr('atributo', 'valor')
+// $('list_item').fadeIn()
+// $('list_item').fadeOut()
+// $('list_item').blur()
+// $('list_item').slideDown(2000)
 
-// // Read user
-// const readUser = () => {
-//     // https://koders1gpython-default-rtdb.firebaseio.com/jorge
-//     let xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState === 4 && this.status === 200) {
-//             console.log(JSON.parse(this.response))
-//         } else if (this.readyState === 4 && this.status === 404) {
-//             console.error(JSON.parse(this.response))
-//             return false
-//         }
-//     }
-//     xhttp.open('GET', 'https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/.json')
-//     // xhttp.open('GET', 'https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/-MQnTbsClYPUsYDcBS-R.json')
-//     xhttp.send()
-// }
+// //Top, left, right, botton, z-index necesitan posicionar primero.
+// $('list_item').css('position', 'relative')
+// $('list_item').animate({top: '100px'})
 
-// // Update and replace
-// const updateAndReplaceUser = (idUser) => {
-//     // https://koders1gpython-default-rtdb.firebaseio.com/jorge
-//     let xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState === 4 && this.status === 200) {
-//             console.log(JSON.parse(this.response))
-//         } else if (this.readyState === 4 && this.status === 404) {
-//             console.error(JSON.parse(this.response))
-//             return false
-//         }
-//     }
-//     xhttp.open('PUT', `https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/${idUser}.json`)
-//     xhttp.send(
-//         JSON.stringify({
-//             id: 1,
-//             name: "Jorge",
-//             lastname: "Camarillo",
-//             urlPhoto: "https://loremflickr.com/320/240/person"
-//         })
-//     )
-// }
+// //400 milisegundos es el tiempo estándar 
 
-// // Update and modify 
-// const updateAndModifyUser = (idUser) => {
-//     // https://koders1gpython-default-rtdb.firebaseio.com/jorge
-//     let xhttp = new XMLHttpRequest()
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState === 4 && this.status === 200) {
-//             console.log(JSON.parse(this.response))
-//         } else if (this.readyState === 4 && this.status === 404) {
-//             console.error(JSON.parse(this.response))
-//             return false
-//         }
-//     }
-//     xhttp.open('PATCH', `https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/${idUser}.json`)
-//     xhttp.send(
-//         JSON.stringify({
-//             name: "Jorge Luis"
-//         })
-//     )
-// }
+// //Añadir clases
+// $('body ol li').addClass('list_item')
+// $('body ol li').removeClass('list_item')
+// $('body ol li').toggleClass('list_item')
 
-// // Delete 
-// const deleteUser = (idUser) => {
-//     // https://koders1gpython-default-rtdb.firebaseio.com/jorge
-//     let xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState === 4 && this.status === 200) {
-//             console.log(JSON.parse(this.response))
-//         } else if (this.readyState === 4 && this.status === 404) {
-//             console.error(JSON.parse(this.response))
-//             return false
-//         }
-//     }
-//     xhttp.open('DELETE', `https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/${idUser}.json`)
-//     xhttp.send()
-// }
+// //Agregar evento
+// $('#show').click(function(){
+//     //show,slideDown,fadeIn...
+//     $('.contenido').fadeIn()
+// })
 
-// // Function request all methods
-// const requestAjax = (url, callback, method = 'GET', data = {}) => {
-//     let xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState === 4 && this.status === 200) {
-//             callback(JSON.parse(this.response))
-//             return true
-//         } else if (this.readyState === 4 && this.status === 404) {
-//             console.error(JSON.parse(this.response))
-//             return false
-//         }
-//     }
-//     xhttp.open(method, url)
-//     if (method === 'GET' || method === 'DELETE') {
-//         xhttp.send()
-//     } else {
-//         // put, patch, post
-//         xhttp.send(JSON.stringify({data}))
-//     }
-// }
+// $('#hide').click(function(){
+//     $('.contenido').fadeOut()
+// })
 
-// // put y post
-// const showResponse = (response) => {
-//     console.log(response)
-// }
-// requestAjax(
-//     'https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/.json',
-//     showResponse,
-//     'POST', 
-//     {
-//         lastname: "Paez",
-//         name: "Ale",
-//         urlPhoto: "https://loremflickr.com/320/240/person"
-//     }
-// )
+// //Getter
+// $('.list_item:first').attr('data-id')
+// //Setter
+// $('.list_item:first').attr('data-otro', 'stuff')
 
-// function request all methods
-const requestAjax = (url, callback, method = 'GET', data = {}) => {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            callback(JSON.parse(this.response))
-            return true
-        } else if (this.readyState === 4 && this.status === 404) {
-            console.error(JSON.parse(this.response))
-            return false
-        }
-    }
-    xhttp.open(method, url)
-    if (method === 'GET' || method === 'DELETE') {
-        xhttp.send()
+// //Obtener valores
+// $('#idkoder').val()
+// //Dar valores
+// $('#idkoder').val('o')
+
+
+// Ejercicios
+// Del listado "#vacations"
+// 1.  Seleccionar elementos de tipo 'h2' y cambiar el color
+
+$('h2').css('color','red').text('Ola ke ase')
+
+// 2.  Selecciona aquellos ítems que tenga la clase .america y modificar el color
+
+$('.america').css('color','#024da1')
+
+// 3.  Modificar el precio de todos los vuelos para que ahora sea $199.99
+
+$('.details').text('$199.99')
+
+// 4.  Modifica todos los títulos de las vacaciones (h2), su nuevo valor será "Titulo de tu agrado".
+// Del listado sorting
+// 1. Cuando le den click al link de America, Europe o Asia
+//     Filtrar del listado "#vacations" filtrar los li con la clase America, Europe o Asia
+//     y ocultar los demás
+// 2. Si le dan click a todos
+//     Filtrar del listado "#vacations" filtrar los li con la clase America, Europe y Asia
+
+$('.sorting a').click(function(){
+    let continent = $(this).text()
+    if(continent === 'Todos') {
+        $('#vacations .vacation').show()
     } else {
-        // put, patch, post
-        xhttp.send(JSON.stringify({data}))
+        $('#vacations .vacation').hide()
+        $(`#vacations .${continent.toLowerCase()}`).show()
     }
-}
+})
 
-// put y post
-const showUsers = (response) => {
-    let users = response
-    let usersList = ''
-    for(user in response ) {
-        let dataUsuario = response[user]
-        usersList += `
-            <li>${dataUsuario.name} ${dataUsuario.lastname} <a href="user.html?id=${user}">Ver usuario</a></li>
-        `
-    }
-    document.querySelector('.list__users').innerHTML = usersList
-}
+/**
+ * Del listado Faq
+ * 1. Al cargar la pagina, mostrar la pregunta 1
+ * 2. Al dar click en head__faq aparecer la descripcion de la pregunta
+ *      y desaparecer las descripciones que esten mostradas
+ */
 
+$('.desc__faq').hide()
+$('.desc__faq:first').show()
 
-if(window.location.pathname === '/' || window.location.pathname === '/index.html'){
-    // estoy en home
-    requestAjax(
-    'https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/.json',
-    showUsers,
-    'GET')
-
-}
-
-const printUser = (arrData) => {  
-    console.log(arrData)
-    document.querySelector('#card__user').innerHTML = `
-    <img src="${arrData.urlPhoto}">
-    <h5 class="card-title name__user">${arrData.name}</h5>
-    <p class="card-text email__user">${arrData.lastname}</p>
-    `
-}
-
-if(window.location.pathname === '/user.html'){
-    let url = new URLSearchParams(location.search)
-    let id = url.get('id')
-    // estoy en home
-    requestAjax(
-    `https://koders1gpython-default-rtdb.firebaseio.com/jorge/users/${id}.json`,
-    printUser,
-    'GET')
-}
+$('#vacations .europe').click(function(event){
+    event.preventDefault()
+    $('.desc__faq').hide()
+    $(this).next().show()
+})
